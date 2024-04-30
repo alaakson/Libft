@@ -6,94 +6,97 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:33:52 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/30 11:05:19 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:01:16 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_wordcount(char const *s, char c);
-char			*fill_words(const char *str, int start, int end);
-/*static void				ft_free(char **strs, int count);*/
+static unsigned int	ft_get_nb_strs(char const *s, char c);
+static void			ft_get_next_str(char **next, unsigned int *len_str, char c);
+static char			**ft_free(char **strs);
 
 char	**ft_split(const char *s, char c)
 {
-	char	**dest;
-	size_t	len;
-	int		i;
-	int		sw;
+	unsigned int	nb_strs;
+	unsigned int	i;
+	unsigned int	next_str_len;
+	char			*next_str;
+	char			**tab;
 
-	if (!s || !(dest = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *))))
-		return (NULL);
+	nb_strs = ft_get_nb_strs(s, c);
 	i = 0;
-	len = 0;
-	sw = -1;
-	while (s[len - 1] != '\0')
-	{
-		if (s[len] != c && sw < 0)
-			sw = len;
-		else if ((s[len] == c || s[len] == '\0') && sw >= 0)
-		{
-			if (!(dest[i++] = fill_words(s, sw, len)))
-			{
-				free(dest[i]);
-				return (NULL);
-			}
-			sw = -1;
-		}
-		len++;
-	}
-	dest[i] = NULL;
-	return (dest);
-}
-
-static size_t	ft_wordcount(char const *s, char c)
-{
-	size_t	count;
-
-	if (!*s)
-		return (0);
-	count = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		if (*s)
-			count++;
-		while (*s != c && *s != '\0')
-			s++;
-	}
-	return (count);
-}
-
-char	*fill_words(const char *str, int start, int end)
-{
-	char	*word;
-	int		i;
-
-	word = malloc((end - start + 1) * sizeof(char));
-	if (!word)
+	tab = (char **)malloc(sizeof(char *) *(nb_strs + 1));
+	if (!tab || !s)
 		return (NULL);
-	i = 0;
-	while (start < end)
+	next_str = (char *)s;
+	next_str_len = 0;
+	while (i < nb_strs)
 	{
-		word[i] = str[start];
+		ft_get_next_str(&next_str, &next_str_len, c);
+		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
+		if (!tab[i])
+			return (ft_free(tab));
+		ft_strlcpy(tab[i], next_str, next_str_len + 1);
 		i++;
-		start++;
 	}
-	word[i] = '\0';
-	return (word);
+	tab[i] = NULL;
+	return (tab);
 }
 
-/*void	ft_free(char **strs, int count)
+static unsigned int	ft_get_nb_strs(char const *s, char c)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	n_str;
+	int				substring;
 
 	i = 0;
-	while (i < count)
+	n_str = 0;
+	substring = 0;
+	while (s[i])
+	{
+		if (s[i] != c && substring == 0)
+		{
+			substring = 1;
+			n_str++;
+		}
+		else if (s[i] == c)
+		{
+			substring = 0;
+		}
+		i++;
+	}
+	return (n_str);
+}
+
+static void	ft_get_next_str(char **next, unsigned int *len_str, char c)
+{
+	unsigned int	i;
+
+	*next += *len_str;
+	*len_str = 0;
+	i = 0;
+	while (**next && **next == c)
+		(*next)++;
+	while ((*next)[i])
+	{
+		if ((*next)[i] == c)
+			return ;
+		(*len_str)++;
+		i++;
+	}
+}
+
+static char	**ft_free(char **strs)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (strs[i])
 	{
 		free(strs[i]);
 		i++;
 	}
 	free(strs);
-}*/
+	return (0);
+}
