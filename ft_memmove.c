@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 09:13:39 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 16:11:42 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:05:13 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
+	char	*t_dst;
+	char	*t_src;
 	size_t	i;
 
+	i = 0;
+	t_src = (char *) src;
+	t_dst = (char *) dst;
 	if (!dst && !src)
 		return (NULL);
-	c_src = (char *) src;
-	c_dst = (char *) dst;
-	if (c_dst > c_src)
-		while (len -- > 0)
-			c_dst[len] = c_src[len];
+	if (t_dst > t_src)
+	{
+		while (len-- > 0)
+			t_dst[len] = t_src[len];
+	}
 	else
 	{
-		while (i++ < len)
-			c_dst[i] = c_src[i];
+		while (i < len)
+		{
+			t_dst[i] = t_src[i];
+			i++;
+		}
 	}
 	return (dst);
 }

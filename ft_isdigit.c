@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:34:41 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 16:00:44 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:31:16 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int i)
+int	ft_isdigit(int c)
 {
-	while (i)
-	{
-		if (i >= '0' && i <= '9')
-			return (c);
-	}
+	if (c >= '0' && c <= '9')
+		return (c);
 	return (0);
 }

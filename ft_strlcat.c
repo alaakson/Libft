@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:05:44 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 17:08:55 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:37:09 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (src_len + dstsize);
 	while (src[j] && (dst_len + j) < dstsize)
 	{
-		dst[i] == src[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
