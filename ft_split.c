@@ -6,14 +6,14 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:33:52 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/30 16:01:16 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/02 08:15:07 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_get_nb_strs(char const *s, char c);
-static void			ft_get_next_str(char **next, unsigned int *len_str, char c);
+static unsigned int	ft_strs(char const *s, char c);
+static void			ft_next_str(char **next, unsigned int *len_str, char c);
 static char			**ft_free(char **strs);
 
 char	**ft_split(const char *s, char c)
@@ -24,7 +24,7 @@ char	**ft_split(const char *s, char c)
 	char			*next_str;
 	char			**tab;
 
-	nb_strs = ft_get_nb_strs(s, c);
+	nb_strs = ft_strs(s, c);
 	i = 0;
 	tab = (char **)malloc(sizeof(char *) *(nb_strs + 1));
 	if (!tab || !s)
@@ -33,7 +33,7 @@ char	**ft_split(const char *s, char c)
 	next_str_len = 0;
 	while (i < nb_strs)
 	{
-		ft_get_next_str(&next_str, &next_str_len, c);
+		ft_next_str(&next_str, &next_str_len, c);
 		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
 		if (!tab[i])
 			return (ft_free(tab));
@@ -44,7 +44,7 @@ char	**ft_split(const char *s, char c)
 	return (tab);
 }
 
-static unsigned int	ft_get_nb_strs(char const *s, char c)
+static unsigned int	ft_strs(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	n_str;
@@ -69,7 +69,7 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	return (n_str);
 }
 
-static void	ft_get_next_str(char **next, unsigned int *len_str, char c)
+static void	ft_next_str(char **next, unsigned int *len_str, char c)
 {
 	unsigned int	i;
 

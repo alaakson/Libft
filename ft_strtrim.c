@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:40:11 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/25 08:29:46 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/02 08:52:37 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 		end--;
 	return (ft_substr(s1, first, end - first));
 }
-/*
-int	main()
-{
-	char *test = "abababTestbbbaaa";
-	printf("%s\n", ft_strtrim(test, "ab"));
-	return (0);
-}*/
