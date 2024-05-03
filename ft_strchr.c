@@ -3,33 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:55:44 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 16:32:15 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/03 09:38:24 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*char	*ft_strchr(const char *s, int c)
-{
-    unsigned int    i;
-    char    alpha;
-
-    alpha = (char) c;
-    i = 0;
-
-    while (s[i])
-    {
-        if (s[i] == alpha)
-        return ((char *) &s[i]);
-        i++;
-    }
-    if (s[i] == alpha)
-        return ((char *) & s[i]);
-    return (NULL);
-}*/
 
 char	*ft_strchr(const char *s, int c)
 {

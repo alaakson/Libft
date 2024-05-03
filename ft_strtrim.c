@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:40:11 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/02 08:52:37 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:55:02 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	first;
 	size_t	end;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	first = 0;
 	end = ft_strlen(s1);
 	while (in(set, s1[first]))
