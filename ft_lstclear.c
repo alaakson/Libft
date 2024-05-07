@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:39:51 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/02 14:34:52 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:44:54 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
+	if (!lst || !del)
+		return ;
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
+		del((*lst)->content);
+		free(*lst);
 		*lst = tmp;
 	}
-	free(*lst);
 	*lst = NULL;
 }

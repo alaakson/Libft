@@ -61,7 +61,7 @@ bonus: $(OFILES) $(BOFILES)
 %.o: %.c 
 	$(CC)	$(CFLAGS) -c $< -o $@ 
 clean:
-	rm -f	$(OFILES)
+	rm -f	$(OFILES) $(BOFILES)
 fclean: clean
 	rm -f	$(NAME)
 

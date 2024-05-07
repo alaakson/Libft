@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:16:05 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/30 12:08:16 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:01:54 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,4 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-char	f(char c)
-{
-	char	str;
-
-	str = c + 1;
-	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:01:32 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/03 13:39:26 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:42:13 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	dest[d] = '\0';
 	return (dest);
-}
-
-int	main()
-{
-	const char	txt[] = "bingo bango bongo ";
-	const char txt2[] = "bish bash bosh";
-	char *res;
-	
-	res = ft_strjoin(txt, txt2);
-	if (res)
-	{
-		printf("Concatenated strings: %s\n", res);
-		free (res);
-	}
-	else 
-	{
-		printf("Memory allocation failed: \n");
-	}
-	return (0);
 }
