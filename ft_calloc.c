@@ -6,20 +6,18 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:54:33 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/06 14:03:05 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:24:02 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <limits.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*ptr;
 	size_t			i;
 
-	if (count > 0 && size > 0 && count > (UINT_MAX / size))
+	if (count > 0 && size > 0 && count > (SIZE_MAX / size))
 		return (NULL);
 	ptr = malloc(count * size);
 	if (!ptr)
