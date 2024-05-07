@@ -6,14 +6,13 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:07:21 by alaakson          #+#    #+#             */
-/*   Updated: 2024/04/30 14:07:30 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:54:46 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <sys/types.h> 
 # include <unistd.h>
 # include <stdlib.h>
 
