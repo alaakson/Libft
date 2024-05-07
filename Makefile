@@ -1,4 +1,4 @@
-NAME =libft.a
+NAME = libft.a
 
 CC	= cc
 AR = ar
@@ -56,8 +56,10 @@ CFLAGS	=	-Wall -Wextra -Werror
 all: $(NAME)
 $(NAME):	$(OFILES) 
 	$(AR)	-rcs	$(NAME)	$(OFILES)
-bonus: $(OFILES) $(BOFILES)
+bonus: .bonus
+.bonus: $(OFILES) $(BOFILES)
 	$(AR) -rcs $(NAME) $(OFILES) $(BOFILES)
+	@touch .bonus
 %.o: %.c 
 	$(CC)	$(CFLAGS) -c $< -o $@ 
 clean:
@@ -67,4 +69,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+rebonus: fclean bonus
+
+.PHONY: all clean fclean re bonus rebonus

@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:49:45 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/03 09:00:16 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:48:58 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + str[i] - '0';
+		if (sign == 1 && res < 0)
+			return (-1);
 		i++;
 	}
 	res *= sign;
