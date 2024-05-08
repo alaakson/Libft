@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 10:39:53 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/06 12:46:23 by alaakson         ###   ########.fr       */
+/*   Created: 2024/04/26 10:40:09 by alaakson          #+#    #+#             */
+/*   Updated: 2024/05/07 13:06:01 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void*))
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	t_list	*new_list;
+	t_list	*new_obj;
+	void	*ptr;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
+	{
+		ptr = f(lst->content);
+		new_obj = ft_lstnew(ptr);
+		if (!new_obj)
+		{
+			del(ptr);
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_obj);
+		lst = lst->next;
+	}
+	return (new_list);
 }

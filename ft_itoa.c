@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 08:13:14 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/07 13:19:53 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/08 09:48:41 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ size_t	nb_len(int nb)
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*str;
-	long	nb;
+	int				len;
+	char			*str;
+	long long int	nb;
 
 	len = nb_len(n);
 	nb = n;

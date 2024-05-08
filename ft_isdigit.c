@@ -6,11 +6,9 @@
 /*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:34:41 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/03 08:50:15 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:48:20 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {
