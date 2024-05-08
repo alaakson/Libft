@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:39:48 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/08 12:06:19 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:47:58 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

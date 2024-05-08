@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaakson <alaakson@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 10:39:53 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/08 12:06:31 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:48:06 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
