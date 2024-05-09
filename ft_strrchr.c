@@ -6,7 +6,7 @@
 /*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:13:09 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/08 13:49:58 by alaakson         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:16:08 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == (char)c)
-		res = (char *)&s[i];
+		res = ((char *)&s[i]);
 	return (res);
 }
