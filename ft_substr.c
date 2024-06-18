@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaakson <alaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:39:26 by alaakson          #+#    #+#             */
-/*   Updated: 2024/05/08 13:50:08 by alaakson         ###   ########.fr       */
+/*   Created: 2024/05/22 08:58:27 by alaakson          #+#    #+#             */
+/*   Updated: 2024/05/28 10:14:50 by alaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (!substring)
 		return (NULL);
 	ft_strlcpy(substring, s + start, len + 1);
-	substring[len] = '\0';
 	return (substring);
 }
